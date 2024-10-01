@@ -42,3 +42,7 @@ nav li {
 nav li a {
   text-decoration: none;
 }
+
+.row {
+  padding: 10px 0 10px 0;
+}
