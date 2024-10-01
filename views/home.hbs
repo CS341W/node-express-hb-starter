@@ -1,34 +1,22 @@
-<h1>Animals</h1>
+<h1>Subscriptions</h1>
 <div>
-  {{#each animals}}
-    <div class="animal">
-      <h2>{{this.name}}</h2>
-      <p>Family: {{this.family}}</p>
+  {{#each subscribers}}
+    <div class="subscriber">
+      <h2>{{this.fname}} {{this.lname}}</h2>
+      <p>Sex: {{this.sex}}</p>
 
-      <form method="post" action="/animals/favorite/{{this.name}}">
+      <form method="post" action="/subscribers/favorite/{{this.id}}">
         {{#if this.isFavorite}}
-        <p>Favorite: Yes</p>
+          <p>Favorite: Yes</p>
         {{else}}
-        <p>Favorite: No</p>
+          <p>Favorite: No</p>
         {{/if}}
         <button type="submit">Toggle Favorite</button>
       </form>
 
-      <form method="post" action="/animals/delete/{{this.name}}">
+      <form method="post" action="/subscribers/delete/{{this.id}}">
         <button type="submit">Delete</button>
       </form>
     </div>
   {{/each}}
-  <form method="post" action="/animals/create">
-    <input type="text" name="name" placeholder="Name">
-    <select name="family">
-      <option value="mammal">Mammal</option>
-      <option value="bird">Bird</option>
-      <option value="reptile">Reptile</option>
-      <option value="amphibian">Amphibian</option>
-      <option value="fish">Fish</option>
-      <option value="invertebrate">Invertebrate</option>
-    </select>
-    <button type="submit">Add</button>
-  </form>
 </div>
